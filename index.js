@@ -3,10 +3,13 @@ const numButtons = document.querySelectorAll('.btn-num');
 
 const handleDigitClick = (e) => {
   const buttonValue = e.target.textContent;
-  if (displayElm.textContent.length === 9) {
+  if (displayElm.textContent === '0') 
+    {displayElm.textContent = buttonValue;} 
+    else if (displayElm.textContent.length === 9) {
     return
+  } else {
+    displayElm.textContent += buttonValue;
   }
-  displayElm.textContent += buttonValue;
 }
 
 numButtons.forEach((numButton) => {
